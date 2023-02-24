@@ -11,5 +11,11 @@ You can install "OrderByQuery" by running the following command in the Package M
 Install-Package Pitman.OrderBy
 ```
 
-Example
+## Example
 Here's an example of how to use "OrderByQuery" to sort an IQueryable collection of entities based on a field passed as a query parameter:
+
+## Contributing
+Contributions to "OrderByQuery" are welcome and encouraged! If you find a bug or have a feature request, please create an issue in the repository. If you'd like to contribute code to the project, please open a pull request with your changes.
+
+## License
+"OrderBy" is released under the MIT License. See LICENSE for details.
