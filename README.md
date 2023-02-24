@@ -8,7 +8,7 @@ You can use "OrderBy" in your .NET project by installing the "OrderByQuery" NuGe
 Installation
 You can install "OrderByQuery" by running the following command in the Package Manager Console:
 ```
-Install-Package OrderByQuery
+Install-Package Pitman.OrderBy
 ```
 
 Example
