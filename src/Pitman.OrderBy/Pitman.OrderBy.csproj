@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>OrderBy Automation</Title>
+    <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>symbols.nupkg</SymbolPackageFormat>
+    <Description>"Pitman.OrderBy" is a .NET library that provides an implementation of an OrderByQuery class that enables you to sort an IQueryable collection of entities dynamically based on a field passed as a query parameter. With "OrderByQuery", you can automatically get the field of order by from your endpoint and apply it to an IQueryable. This library includes a set of unit tests that validate the expected behavior of the implemented functionality.</Description>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\Downloads\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\..\..\Downloads\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+  </ItemGroup>
+
+</Project>
