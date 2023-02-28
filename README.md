@@ -30,6 +30,41 @@ var list = new List<Person>
 var orderedList = orderBy.ApplyOrder(list.AsQueryable());
 ```
 ### Using Asp.net
+On a controller use **[FromQuery] OrderBy** and apply the order on an IQueryable list.
+In the url add the parameter **order** with the value of **{propertyName}:{direction}**. 
+Direction can be either **asc** or **desc**.
+
+Example of an url sorting the by temperatureC as property name:
+```
+https://localhost:7201/weatherforecast?order=temperatureC:asc
+or
+https://localhost:7201/weatherforecast?order=temperatureC:desc
+```
+
+#### Full Example
+```
+[HttpGet]
+public IEnumerable<WeatherForecast> Get([FromQuery] OrderBy orderBy) // receive order from url parameters
+{
+    return Results(orderBy);
+}
+
+private static IEnumerable<WeatherForecast> Results(IOrderBy orderBy)
+{
+    var queryable =  Enumerable.Range(1, 5).Select(index => new WeatherForecast
+    {
+        Date = DateTime.Now.AddDays(index),
+        TemperatureC = Random.Shared.Next(-20, 55),
+        Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+    })
+    .AsQueryable();
+
+    queryable = orderBy.ApplyOrder(queryable); // apply the order on the IQueryable
+
+    return queryable;
+
+}
+```
 
 ## Contributing
 Contributions to "OrderByQuery" are welcome and encouraged! If you find a bug or have a feature request, please create an issue in the repository. If you'd like to contribute code to the project, please open a pull request with your changes.
